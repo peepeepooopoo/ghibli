@@ -523,7 +523,7 @@
                 </div>
                 <div class="contact-item">
                     <i class="fa-solid fa-location-dot"></i>
-                    <span>goa</span>
+                    <span>Bengaluru</span>
                 </div>   
             </div>
         </div>
@@ -562,13 +562,13 @@
     </footer>
         <script>
             document.querySelector('a[href="#description"]').addEventListener('click', function (event) {
-                event.preventDefault(); // Prevent default jump behavior
+                event.preventDefault(); 
         
-                const target = document.querySelector('#description'); // Target section
-                const targetPosition = target.getBoundingClientRect().top + window.scrollY; // Get target position
-                const startPosition = window.scrollY; // Current scroll position
-                const distance = targetPosition - startPosition; // Distance to scroll
-                const duration = 800; // Scroll duration in milliseconds (adjust for slower/faster)
+                const target = document.querySelector('#description'); 
+                const targetPosition = target.getBoundingClientRect().top + window.scrollY; 
+                const startPosition = window.scrollY; 
+                const distance = targetPosition - startPosition; 
+                const duration = 800; 
                 let startTime = null;
         
                 function animation(currentTime) {
@@ -599,13 +599,13 @@
         </script>
         <script>
             document.querySelector('a[href="#home"]').addEventListener('click', function (event) {
-                event.preventDefault(); // Prevent default jump behavior
+                event.preventDefault();
         
-                const target = document.querySelector('#home'); // Target section
-                const targetPosition = target.getBoundingClientRect().top + window.scrollY; // Get target position
-                const startPosition = window.scrollY; // Current scroll position
-                const distance = targetPosition - startPosition; // Distance to scroll
-                const duration = 800; // Scroll duration in milliseconds (adjust for slower/faster)
+                const target = document.querySelector('#home'); 
+                const targetPosition = target.getBoundingClientRect().top + window.scrollY; 
+                const startPosition = window.scrollY; 
+                const distance = targetPosition - startPosition; 
+                const duration = 800; 
                 let startTime = null;
         
                 function animation(currentTime) {
