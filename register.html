@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .reg-body * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.reg-body {
+    display: flex;
+    height: 100vh;
+
+}
+
+.registration-container {
+    display: flex;
+    width: 100%;
+}
+
+.left-section {
+    flex: 1;
+    background-image: url("ghiblilogin.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 50px;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+    /* Keeps it from stretching too wide */
+    width: 100%;
+}
+
+.right-section h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.right-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+    gap: 15px; /* More space between form elements */
+}
+
+
+.input-group {
+    width: 100%;
+}
+
+.reg-body input, 
+.reg-body select {
+    width: 100%;
+    padding: 14px; /* Increased padding for height */
+    margin: 10px 0; /* Increased vertical space */
+    border: 2px solid #ccc; /* Thicker border */
+    border-radius: 6px; /* Rounded corners */
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.create-btn, .cancel-btn {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.create-btn {
+    background: #d9534f;
+    color: white;
+    border: none;
+}
+
+.cancel-btn {
+    background: #f8f8f8;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.create-btn:hover {
+    background: #c9302c;
+}
+
+.cancel-btn:hover {
+    background: #e0e0e0;
+}
+
+/* Sign-in text */
+.signin-text {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signin-text a {
+    color: #d9534f;
+    text-decoration: none;
+}
+
+    </style>
+</head>
+<body class="reg-body">
+    <div class="registration-container">
+        <div class="left-section">
+            
+        </div>
+        <div class="right-section">
+            <h1></h1>
+            <h2>Create your free account.</h2>
+            <form action="register.php" method="POST">
+                <input type="email" placeholder="Email" required>
+                <input type="text" id="reg-username" placeholder="Username" required>
+                <input type="password" id="reg-password" placeholder="Password" required>
+                <input type="password" placeholder="Reenter Password" required>
+                
+                <button type="submit" class="create-btn">Sign Up</button>
+                <button type="button" class="cancel-btn" onclick="window.location.href='index.html'">Cancel</button>
+            </form>
+            <p class="signin-text">Already Registered? <a href="login.html">Login.</a></p>
+        </div>
+    </div>
+    <script>
+        function registerUser(event) {
+            event.preventDefault(); // Prevent form submission
+    
+            let username = document.getElementById("reg-username").value;
+            let password = document.getElementById("reg-password").value;
+    
+            if (localStorage.getItem(username)) {
+                alert("Username already taken. Choose another.");
+            } else {
+                // Store user credentials in localStorage
+                localStorage.setItem(username, JSON.stringify({ password: password }));
+                alert("Registration successful! You can now log in.");
+                window.location.href = "login.html"; // Redirect to login page
+            }
+        }
+    </script>
+</body>
+</html>
